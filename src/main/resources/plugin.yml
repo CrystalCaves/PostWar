@@ -1,0 +1,3 @@
+name: PostWar
+main: it.crystalcaves.postwar.PostWar
+version: ${version}

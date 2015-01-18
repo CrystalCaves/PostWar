@@ -59,7 +59,12 @@ public class DefaultArenaManager implements ArenaManager{
 
 	@Override
 	public String getArenaName(Arena arena) {
-		return null;
+		for(Map.Entry<String, Arena> entry: arenas.entrySet()){
+			if(entry.getValue().equals(arena)){
+				return entry.getKey();
+			}
+		}
+		return "";
 	}
 	
 	@Override

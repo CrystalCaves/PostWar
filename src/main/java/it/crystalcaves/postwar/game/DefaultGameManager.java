@@ -4,6 +4,7 @@ import it.crystalcaves.postwar.PostWar;
 import it.crystalcaves.postwar.arena.Arena;
 import it.crystalcaves.postwar.yaml.YamlFile;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -13,9 +14,10 @@ public class DefaultGameManager implements GameManager{
 	
 	private YamlFile configFile;
 	private FileConfiguration config;
+	private HashMap<String, Player> players;
 	
 	public DefaultGameManager(){
-		configFile = new YamlFile(PostWar.getInstance(), "arenas.yml");
+		configFile = new YamlFile(PostWar.getInstance(), "config.yml");
 		config = configFile.getConfig();
 	}
 	

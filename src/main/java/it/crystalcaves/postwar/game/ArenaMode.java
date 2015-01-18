@@ -15,17 +15,22 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 
 public interface ArenaMode {
 	
+	public void init(ConfigurationSection config, Arena arena);
+	
 	public ConfigurationSection getConfig();
+	
+	public void load();
 	
 	public Arena getArena();
 	
 	public List<Player> getPlayers();
 	
 	public boolean addPlayer(Player player);
+	
+	public void onPlayerAdd(Player player);
 	
 	public boolean containsPlayer(Player player);
 	
@@ -55,6 +60,6 @@ public interface ArenaMode {
 	
 	public void onPlayerDeath(PlayerDeathEvent event);
 	
-	public void onPlayerQuit(PlayerQuitEvent event); 
+	public void onPlayerRemove(Player event); 
 	
 }
